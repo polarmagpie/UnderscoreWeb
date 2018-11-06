@@ -14,7 +14,6 @@ const Foot = () => {
                     <Grid.Row>
                         <List horizontal divided inverted link size='medium'>
                             <List.Item as ='a' href='#'>언더스코어 페이스북</List.Item>
-                            <List.Item as ='a' href='#'>Contact</List.Item>
                             <List.Item as ='a' href='#'>개인정보처리방침</List.Item>
                         </List>
                     </Grid.Row>

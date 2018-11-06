@@ -2,28 +2,52 @@ import React from 'react';
 import {Sidebar, Menu} from 'semantic-ui-react';
 
 const Side = (props) => {
+    const pageList = [
+        {
+            id: 0,
+            target: 'lecture',
+            name: '강연'
+        }, {
+            id: 1,
+            target: 'cardnews',
+            name: '카드뉴스'
+        }, {
+            id: 2,
+            target: 'newsletter',
+            name: '뉴스레터'
+        }, {
+            id: 3,
+            target: 'subscribe',
+            name: '구독'
+        }, {
+            id: 4,
+            target: 'contact',
+            name: 'CONTACT'
+        }, {
+            id: 5,
+            target: 'about',
+            name: 'ABOUT'
+        }
+    ].map((e) => {
+        return (<Menu.Item as='a' key={e.id} onClick={() => handleChangePage(e.target)} content={e.name}></Menu.Item>)
+    })
+
     const handleChangePage = (page) => {
         props.handleChangePage(page);
         props.hideSidebar();
     }
 
     return (
-        <Sidebar 
-        as={Menu}
-        animation='overlay'
-        direction='left'
-        inverted
-        vertical
-        visible={props.isVisible}
-        size='tiny'
-        >
-        <Menu.Item as='h3' header>MENU</Menu.Item>
-        <Menu.Item as='a' onClick={() => handleChangePage('lecture')}>강연</Menu.Item>
-        <Menu.Item as='a' onClick={() => handleChangePage('cardnews')}>카드뉴스</Menu.Item>
-        <Menu.Item as='a' onClick={() => handleChangePage('newsletter')}>뉴스레터</Menu.Item>
-        <Menu.Item as='a' onClick={() => handleChangePage('subscribe')}>구독</Menu.Item>
-        <Menu.Item as='a' onClick={() => handleChangePage('contact')}>CONTACT</Menu.Item>
-        <Menu.Item as='a' onClick={() => handleChangePage('about')}>ABOUT</Menu.Item>
+        <Sidebar
+            as={Menu}
+            animation='overlay'
+            direction='left'
+            inverted
+            vertical
+            visible={props.isVisible}
+            size='tiny'>
+            <Menu.Item as='h3' header>MENU</Menu.Item>
+            {pageList}
         </Sidebar>
     );
 };
