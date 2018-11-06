@@ -4,11 +4,11 @@ import { Grid, Icon, Image, Button, Container} from 'semantic-ui-react';
 
 const Head = (props) => {
     return (
-        <Container>
+        <Container style={{paddingTop: '2rem'}}>
             <Grid>
                 <Grid.Row>
                     <Grid.Column width={3} floated='left' verticalAlign='bottom'>
-                        <Button icon basic>
+                        <Button icon basic onClick={props.onClick}>
                           <Icon name='sidebar' size='large' />
                         </Button>
                     </Grid.Column>
