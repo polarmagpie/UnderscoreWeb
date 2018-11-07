@@ -1,4 +1,18 @@
-body{
-    height: 100%;
-    margin: 0;
+.app{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.body{
+    flex: 1;
+    margin-top: 1rem;
+}
+
+.foot{
+    margin-top: 1rem;
+}
+
+.logo:hover{
+    cursor: pointer;
 }

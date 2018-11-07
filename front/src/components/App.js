@@ -39,8 +39,8 @@ class App extends Component {
                     {(e) => this.handleChangePage(e)}
                     isVisible={this.state.isSidebarVisible}/>
                 <Sidebar.Pusher dimmed={this.state.isSidebarVisible} onClick={this.hideSidebar}>
-                    <div className="App">
-                        <Head onClick={this.handleToggleSidebar}/>
+                    <div className="app">
+                        <Head onClick={this.handleToggleSidebar} handleChangePage={e => this.handleChangePage('main')}/>
                         <Body currentPage={this.state.currentPage}/>
                         <Foot/>
                     </div>

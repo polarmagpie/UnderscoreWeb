@@ -35,19 +35,14 @@ class Body extends Component {
         }
     }
 
-    render(props) {
+    render() {
         const style = {
             marginTop: '2rem',
-            flex: '1 1 auto',
-            height: '60vh',
-            textAlign: 'center'
         }
 
         return (
-            <div style={style}>
-                <Container>
-                    {this.switchPage()}
-                </Container>
+            <div className='body' style={style}>
+                {this.switchPage()}
             </div>
         );
     }
