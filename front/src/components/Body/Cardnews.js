@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Cardnews = () => {
-    return (
-        <div>
-            까드뉴
-        </div>
-    );
-};
+class Cardnews extends Component {
+    render() {
+        return (
+            <div>
+                
+            </div>
+        );
+    }
+}
 
 export default Cardnews;

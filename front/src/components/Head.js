@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from '../images/Logo_Textonly_Black.png';
-import { Grid, Icon, Image, Button, Container, Divider} from 'semantic-ui-react';
+import { Grid, Icon, Image, Button, Container} from 'semantic-ui-react';
 
 const Head = (props) => {
     return (
-        <div class="head">
+        <div className="head">
             <Container style={{paddingTop: '2rem'}}>
                 <Grid>
                     <Grid.Row>

@@ -11,23 +11,12 @@ import starbucks from '../../images/temp/스타벅스.png';
 import Logo from '../../images/Logo_Imageonly_White.png';
 
 class About extends Component {
-    //기본적으로 아코디온의 0번째 행이 열려있음
-    state = {
-        activeIndex: 0
-    }
-
-    //아코디온의 타이틀을 클릭했을 때 그 아코디온을 엶. 똑같은 타이틀을 클릭했을 때 아코디온을 모두 닫음.
-    handleClick = (e, props) => {
-        const {index} = props;
-        const {activeIndex} = this.state;
-        const newIndex = activeIndex === index
-            ? -1
-            : index;
-
-        this.setState({activeIndex: newIndex});
-    }
-
     render() {
+        const popupStyle = {
+            opacity:'0.8',
+            borderRadius: '0',
+        }
+
         const members = [
             {
                 id: 0,
@@ -68,18 +57,29 @@ class About extends Component {
             }
         ].map((e) => {
             return (
-                <Grid.Column>
+                <Grid.Column textAlign='center'>
                     <Popup
                         key={e.id}
-                        trigger={< Image src = {
+                        inverted
+                        trigger={<div> < Image src = {
                         e.image
                     }
-                    size = 'medium' style = {{borderRadius: '1.5rem'}}/>}
+                    size = 'medium' style = {{borderRadius: '1.5rem'}}/> 
+                    <Header a='h4'>
+                        {e.name}
+                        <Header.Subheader>
+                            {e.role}
+                        </Header.Subheader>
+                    </Header >
+                    </div>}
+                        style={popupStyle}
                         header={e.name}>
-                        <Header as='h3'>{e.name}
-                            <Header.Subheader>{e.role}</Header.Subheader>
-                        </Header>
-                        <p>{e.description}</p>
+                        <div style={{textAlign:'justify'}}>
+                            <Header as='h3' inverted>{e.name}
+                                <Header.Subheader inverted>{e.role}</Header.Subheader>
+                            </Header>
+                            <p>{e.description}</p>
+                        </div>
                     </Popup>
                 </Grid.Column>
             )
@@ -125,21 +125,10 @@ class About extends Component {
             }
         ]
 
-        const {activeIndex} = this.state
-
         return (
             <div>
-                <Container
-                    text
-                    textAlign='center'>
-                    <Image
-                        src={Logo}
-                        circular
-                        size='small'
-                        centered
-                        style={{
-                        backgroundColor: 'rgb(0, 53, 103)'
-                    }}/>
+                <Container text textAlign='center'>
+                    <Image src={Logo} className='bgColor' circular size='small' centered/>
                     <Header as='h2' content='세상의 지식에 밑줄을 긋다' subheader='학술 지식 큐레이팅 미디어'/>
                 </Container>
                 <Header as='h3' textAlign='center'>Member</Header>

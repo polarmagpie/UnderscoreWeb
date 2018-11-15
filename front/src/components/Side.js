@@ -9,7 +9,7 @@ const Side = (props) => {
             name: '강연'
         }, {
             id: 1,
-            target: 'cardnews',
+            target: 'cardnewslist',
             name: '카드뉴스'
         }, {
             id: 2,
@@ -21,10 +21,6 @@ const Side = (props) => {
             name: '구독'
         }, {
             id: 4,
-            target: 'contact',
-            name: 'CONTACT'
-        }, {
-            id: 5,
             target: 'about',
             name: 'ABOUT'
         }
@@ -45,7 +41,7 @@ const Side = (props) => {
             inverted
             vertical
             visible={props.isVisible}
-            size='tiny'>
+            size='small'>
             <Menu.Item as='h3' header>MENU</Menu.Item>
             {pageList}
         </Sidebar>

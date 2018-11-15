@@ -1,7 +1,7 @@
 import React from 'react';
 import {Segment, Grid, List} from 'semantic-ui-react';
 
-const Foot = () => {
+const Foot = (props) => {
     return (
         <div className="foot">
             <Segment
@@ -13,8 +13,9 @@ const Foot = () => {
                     <Grid.Column>
                         <Grid.Row>
                             <List horizontal divided inverted link size='medium'>
-                                <List.Item as ='a' href='#'>언더스코어 페이스북</List.Item>
-                                <List.Item as ='a' href='#'>개인정보처리방침</List.Item>
+                                <List.Item as ='a' onClick={() => props.handleChangePage('contact')}>CONTACT</List.Item>
+                                <List.Item as ='a' href='https://www.facebook.com/media.underscore/' target='_blank'>FACEBOOK</List.Item>
+                                <List.Item as ='a' onClick={() => props.handleChangePage('privacypolicy')}>PRIVACY POLICY</List.Item>
                             </List>
                         </Grid.Row>
                         <Grid.Row>
