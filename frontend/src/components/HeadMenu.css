@@ -1,0 +1,11 @@
+.head{
+    margin-top: 1.5rem;
+}
+
+.logo{
+    user-select: none;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
